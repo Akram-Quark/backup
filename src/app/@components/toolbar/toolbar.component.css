@@ -1,0 +1,10 @@
+.nav {
+  color: white;
+  margin-bottom: 20px;
+  height: 6%;
+  background-color: #2a9d8f;
+  z-index: 8;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}

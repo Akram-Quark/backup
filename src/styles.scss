@@ -1,0 +1,87 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+html,
+body,
+app-root {
+  height: 100vh;
+  width: 100%;
+}
+app-login {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+app-login {
+  background-image: linear-gradient(#56ab91, #87e9bd 60%);
+}
+
+$green-palette: (
+  50: #2a9d8f,
+  100: #2a9d8f,
+  200: #2a9d8f,
+  300: #2a9d8f,
+  400: #2a9d8f,
+  500: #2a9d8f,
+  600: #2a9d8f,
+  700: #2a9d8f,
+  800: #2a9d8f,
+  900: #2a9d8f,
+  // ... continues to 900
+);
+$yellow-palette: (
+  50: #ebff85,
+  100: #e8ff71,
+  200: #f6ff17,
+  300: #faf736,
+  // ... continues to 900
+);
+$my-primary: mat.define-palette(mat.$green-palette);
+$my-accent: mat.define-palette(mat.$yellow-palette);
+
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+    ),
+  )
+);
+@include mat.core-theme($my-theme);
+@include mat.all-component-themes($my-theme);
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: #99d6b5 !important;
+  outline: 1px solid #99d6b5 !important;
+}
+app-login-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn-secondary {
+  background-color: yellow;
+  color: #2a9d8f;
+}

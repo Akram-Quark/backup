@@ -1,0 +1,44 @@
+<mat-card class="card">
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label for="userName">User name</mat-label>
+      <input
+        required
+        ngModel
+        type="userName"
+        id="userName"
+        name="userName"
+        #userName="ngModel"
+        matInput
+        placeholder="Ex. ahmed"
+      />
+      <mat-error *ngIf="userName.touched && !userName.valid"
+        >user name should be valid</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label for="password">Password</mat-label>
+      <input
+        type="email"
+        id="password"
+        name="password"
+        required
+        ngModel
+        #password="ngModel"
+        matInput
+        placeholder="***"
+      />
+      <mat-error *ngIf="password.touched && !password.valid"
+        >password should be valid</mat-error
+      >
+    </mat-form-field>
+    <button
+      mat-button
+      class="btn-secondary"
+      style="margin-top: 10px"
+      (click)="onSubmit(userName, password)"
+    >
+      submit
+    </button>
+  </form>
+</mat-card>

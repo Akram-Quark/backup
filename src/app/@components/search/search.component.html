@@ -1,0 +1,21 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Favorite food</mat-label>
+    <input
+      matInput
+      name="query"
+      [(ngModel)]="query"
+      placeholder="Ex. balo"
+      (ngModelChange)="onChange()"
+    />
+    <button
+      class="material-icons"
+      style="float: right; border: none; outline: none; background: none"
+      *ngIf="query !== ''"
+      (click)="query = ''"
+    >
+      close
+    </button>
+    <mat-hint>your searching for {{ query }}</mat-hint>
+  </mat-form-field>
+</form>
